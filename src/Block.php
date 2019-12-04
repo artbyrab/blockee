@@ -83,10 +83,6 @@ class Block
         }
 
         if (mb_strlen($data, '8bit') > $this->getSpaceAvailable()) {
-            //echo mb_strlen($data, '8bit') . "<br>";
-            //echo $this->getSpaceAvailable() . "<br>";
-            //echo "Block full!" . "<br>";
-            //exit;
             throw new \Exception(self::ERROR_BLOCK_FULL);
         }
 
