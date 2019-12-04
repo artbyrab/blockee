@@ -1,6 +1,6 @@
 # Blockee
 
-This is a brief description of Blockee
+Blockee is a blockchain built in PHP.
 
 ## Requirements
 
