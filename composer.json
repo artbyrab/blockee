@@ -1,0 +1,25 @@
+{
+    "name": "artbyrab/blockee",
+    "description": "A simple PHP Blockchain.",
+    "keywords": ["blockee", "php"],
+    "license": "DBAD",
+    "authors": [
+        {
+            "name": "artbyrab",
+            "email": "contact@art-by-rab.com"
+        }
+    ],
+    "type": "package",
+    "require": {
+        "php": ">=7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.*",
+        "friendsofphp/php-cs-fixer": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "artbyrab\\blockee\\": "src/"
+        }
+    }
+}
