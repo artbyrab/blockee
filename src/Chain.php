@@ -34,7 +34,23 @@ class Chain
      */
     public function verifyChain()
     {
-        // @TODO i need to verify all the hashes match.
+        $previousBlockHash = '';
+        $count = 0;
+
+        foreach ($this->blocks as $block) {
+
+            if ($count > 0) {
+                if ($block->getPreviousBlockHash() !== $previousBlockHash) {
+                    echo $block->getPreviousBlockHash() . "<br>";
+                    echo $previousBlockHash . "<br>";
+                    echo "Boom Error";
+                    exit;
+                }
+            }
+            $previousBlockHash = $block->getHash();
+
+            $count = $count + 1;
+        }
     }
 
     /**
