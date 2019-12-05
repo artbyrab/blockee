@@ -1,6 +1,8 @@
 # Blockee
 
-Blockee is a blockchain built in PHP.
+Blockee is a blockchain built in PHP. 
+
+I did this as a quick experiment to see if i could build some basic functionality of a blockchain in PHP in a small timeframe. I took as little inspiration as possible by trying not to look at other people's implementations of a blockchain. Therefore, i may have built this in a non traditional way. The sources i used as full or partial inspiration are in the resources section of this file.
 
 ## Requirements
 
@@ -9,6 +11,16 @@ Blockee is a blockchain built in PHP.
 ## Features
 
 * A PHP blockchain
+    * Blocks can be added to a chain
+    * Blocks can contain data
+    * Blocks have a data limit
+    * Blocks can be locked
+    * The next block in the chain contains the hash of the previous block as its first data entry
+    * The chain can be verified for integrity
+    * The chain is stored in memory for the lifetime of the object
+    * It does not use a database
+    * Built in an OOP fashion
+    * The main class is essentially a facade to the rest of the library and can be easily changed or adapted.
 
 ## Installation
 
@@ -47,12 +59,3 @@ use artbyrab\blockee\Blockee;
     * https://www.youtube.com/watch?v=fNRq07He7m8
 * Finding the size of a PHP array without any loops
     * https://stackoverflow.com/questions/9018651/php-get-arrays-data-size
-
-## Coding a simple blockchain
-
-* Blockchain
-    * Blocks are added
-    * This affects the overall hash of the blockchain
-    * The first hash in a new block is the total hash of the previous block
-    * But it could be that a single transaction
-    * 
