@@ -101,6 +101,16 @@ class Block
         $this->calculateSize();
     }
 
+    /**
+     * Get data
+     * 
+     * @return array 
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+
     /** 
      * Get hash
      * 
@@ -114,7 +124,9 @@ class Block
     /**
      * Get hashable string
      * 
-     * This string is the data we hash before creating a new block.
+     * This string is the data we hash before creating a new block. This will 
+     * be constructed from a combination of the previous block hash and the 
+     * data in the block.
      * 
      * @return string
      */
