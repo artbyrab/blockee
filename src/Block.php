@@ -64,6 +64,16 @@ class Block
         return $this;
     }
 
+    /**
+     * Get previous block hash
+     * 
+     * @return string
+     */
+    public function getPreviousBlockHash()
+    {
+        return $this->previousBlockHash;
+    }
+
     /** 
      * Add data
      * 
