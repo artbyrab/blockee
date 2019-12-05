@@ -55,10 +55,14 @@ $blockee->addData("Yet more data added from the index file.");
                 <p>
                     The current Blockee blockchain:
                 </p>    
+                
                 <p>
     <?php echo "<pre>"; ?>
     <?php print_r($blockee); ?>
     <?php echo "</pre>"; ?>
+                </p>
+                <p>
+                <?php $blockee->getChain()->verifyChain(); ?>
                 </p>
             </div><!--/.col-->
         </div><!--/.row-->
