@@ -44,6 +44,7 @@ $blockee->addData("Yet more data added from the index file.");
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
+                <img style="margin:10px;" src="../files/graphics/exports/blockee-logo.png">
                 <hr>
                 <h1>Blockee</h1>
                 <p>A PHP based blockchain</p>
