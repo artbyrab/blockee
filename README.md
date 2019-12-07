@@ -59,3 +59,5 @@ use artbyrab\blockee\Blockee;
     * https://www.youtube.com/watch?v=fNRq07He7m8
 * Finding the size of a PHP array without any loops
     * https://stackoverflow.com/questions/9018651/php-get-arrays-data-size
+* Measure byte size in PHP
+    * https://stackoverflow.com/questions/7568949/measure-string-size-in-bytes-in-php
