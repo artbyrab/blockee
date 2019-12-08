@@ -53,6 +53,14 @@ class Blockee
     }
 
     /**
+     * Add genesis block
+     */
+    public function AddGenesisBlock()
+    {
+
+    }
+
+    /**
      * Get the chain
      * 
      * @return object An instance of the Chain class.
