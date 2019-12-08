@@ -8,7 +8,7 @@ use artbyrab\blockee\GenesisBlock;
  * Chain
  * 
  * The actual chain part of the blockchain. The chain is made up from blocks 
- * that get added to it.
+ * that get added when the previous block is full.
  * 
  * @author artbyrab
  */
@@ -31,6 +31,9 @@ class Chain
 
     /**
      * Verify the blockchain
+     * 
+     * @return boolean If the chain is correct.
+     * @throws exception if the chain is broken.
      */
     public function verifyChain()
     {
@@ -40,17 +43,17 @@ class Chain
         foreach ($this->blocks as $block) {
 
             if ($count > 0) {
-                if ($block->getPreviousBlockHash() !== $previousBlockHash) {
-                    echo $block->getPreviousBlockHash() . "<br>";
-                    echo $previousBlockHash . "<br>";
-                    echo "Boom Error";
-                    exit;
+                $blockHash = $block->getPreviousBlockHash();
+                if ($blockHash !== $previousBlockHash) {
+                    throw new \Exception("The hashes do not match for block number {$count} whose hash is {$blockHash} compared to the previousBlockHash of {$previousBlockHash}");
                 }
             }
             $previousBlockHash = $block->getHash();
 
             $count = $count + 1;
         }
+
+        return true;
     }
 
     /**
@@ -110,6 +113,16 @@ class Chain
     }
 
     /**
+     * Get the blocks
+     * 
+     * @return array An array of Block objects.
+     */
+    public function getBlocks()
+    {
+        return $this->blocks;
+    }
+
+    /**
      * Get the last block
      * 
      * @return object
@@ -147,6 +160,24 @@ class Chain
         }
 
         return $total;
+    }
+
+    /**
+     * Get all the block data
+     * 
+     * @return array
+     */
+    public function getAllBlockData()
+    {
+        $chainData = array();
+
+        foreach ($this->blocks as $block) {
+            foreach ($block->getData() as $data) {
+                array_push($chainData, $data);
+            }
+        }
+
+        return $chainData;
     }
 
 }
