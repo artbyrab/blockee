@@ -1,8 +1,10 @@
 # Blockee
 
-Blockee is a blockchain built in PHP. 
+![Image](files/graphics/exports/blockee-logo.png?raw=true)
 
-I did this as a quick experiment to see if i could build some basic functionality of a blockchain in PHP in a small timeframe. I took as little inspiration as possible by trying not to look at other people's implementations of a blockchain. Therefore, i may have built this in a non traditional way. The sources i used as full or partial inspiration are in the resources section of this file.
+Blockee is a experimental blockchain built in PHP. 
+
+Blockee is an experiment to see if i could build some basic functionality of a blockchain in PHP in a small time frame. I took as little inspiration as possible by trying not to look at other people's implementations of a blockchain. Therefore, i may have built this in a non traditional way or wholly misunderstood basic concepts. The sources i used as full or partial inspiration are in the resources section of this file.
 
 ## Requirements
 
@@ -16,32 +18,49 @@ I did this as a quick experiment to see if i could build some basic functionalit
     * Blocks have a data limit
     * Blocks can be locked
     * The next block in the chain contains the hash of the previous block as its first data entry
-    * The chain can be verified for integrity
+    * The chain can be verified for integrity utilizing the hashes of the previous block
     * The chain is stored in memory for the lifetime of the object
     * It does not use a database
     * Built in an OOP fashion
     * The main class is essentially a facade to the rest of the library and can be easily changed or adapted.
+    * The chain is a separate object to allow for future chain functionality
 
 ## Installation
 
-The reccomended way to install is via Composer.
-Either install in the project via terminal
-```
-$ composer require artbyrab/blockee:~1.0
-```
+You will need to git clone to install Blockee:
 
-or add it to your composer.json file
 ```
-"artbyrab/blockee": "~1.0"
+git clone https://github.com/artbyrab/blockee
 ```
 
 ## Usage
 
-Using your
+### Run composer in the Blockee folder /artbyrab/blockee
 
-### 1) Include Blockee into your app:
 ```
+$ composer install
+```
+
+### Include composers autoload and autoload Blockee
+
+```
+require ('../vendor/autoload.php');
 use artbyrab\blockee\Blockee;
+```
+
+### 2) Create a new Blockee
+
+```
+$blockee = new Blockee();
+```
+
+### 3) Add data to your Blockee
+
+```
+$blockee->addData("Transfer $10 from wallet a to wallet b");
+$blockee->addData("Transfer $20 from wallet a to wallet b");
+$blockee->addData("Transfer $10 from wallet c to wallet d");
+$blockee->addData("Transfer $5 from wallet a to wallet d");
 ```
 
 # Resources
@@ -55,7 +74,7 @@ use artbyrab\blockee\Blockee;
     * https://jeiwan.net/posts/building-blockchain-in-go-part-4/
 * Video on blockchain
     * https://www.youtube.com/watch?v=fNRq07He7m8
-* A good tutorial
+* Another video on blockchain
     * https://www.youtube.com/watch?v=fNRq07He7m8
 * Finding the size of a PHP array without any loops
     * https://stackoverflow.com/questions/9018651/php-get-arrays-data-size
