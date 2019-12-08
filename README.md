@@ -63,9 +63,88 @@ $blockee->addData("Transfer $10 from wallet c to wallet d");
 $blockee->addData("Transfer $5 from wallet a to wallet d");
 ```
 
-# Resources
+## Example of a Blockee object
 
-* [Extending Guide](documents/extending.md)
+```
+artbyrab\blockee\Blockee Object
+(
+    [chain:artbyrab\blockee\Blockee:private] => artbyrab\blockee\Chain Object
+        (
+            [blocks] => Array
+                (
+                    [0] => artbyrab\blockee\Block Object
+                        (
+                            [previousBlockHash:artbyrab\blockee\Block:private] => 0be057dceb143b8f1a14d76ed6738009
+                            [data:artbyrab\blockee\Block:private] => Array
+                                (
+                                    [0] => 0be057dceb143b8f1a14d76ed6738009
+                                    [1] => Initial genesis block data
+                                )
+
+                            [isLocked:artbyrab\blockee\Block:private] => 1
+                            [maximumSizeBytes:artbyrab\blockee\Block:private] => 200
+                            [sizeBytes:artbyrab\blockee\Block:private] => 58
+                        )
+
+                    [1] => artbyrab\blockee\Block Object
+                        (
+                            [previousBlockHash:artbyrab\blockee\Block:private] => 267e6bd430e2fc5684cbe3505f29a810
+                            [data:artbyrab\blockee\Block:private] => Array
+                                (
+                                    [0] => 267e6bd430e2fc5684cbe3505f29a810
+                                    [1] => Transfer $10 from wallet a to wallet b
+                                    [2] => Transfer $20 from wallet a to wallet b
+                                    [3] => Transfer $10 from wallet c to wallet d
+                                    [4] => Transfer $5 from wallet a to wallet d
+                                )
+
+                            [isLocked:artbyrab\blockee\Block:private] => 1
+                            [maximumSizeBytes:artbyrab\blockee\Block:private] => 200
+                            [sizeBytes:artbyrab\blockee\Block:private] => 183
+                        )
+
+                    [2] => artbyrab\blockee\Block Object
+                        (
+                            [previousBlockHash:artbyrab\blockee\Block:private] => bfbffa9228b3253062f06043ab223e58
+                            [data:artbyrab\blockee\Block:private] => Array
+                                (
+                                    [0] => bfbffa9228b3253062f06043ab223e58
+                                    [1] => Transfer $20 from wallet f to wallet a
+                                    [2] => Transfer $2 from wallet b to wallet c
+                                )
+
+                            [isLocked:artbyrab\blockee\Block:private] => 0
+                            [maximumSizeBytes:artbyrab\blockee\Block:private] => 200
+                            [sizeBytes:artbyrab\blockee\Block:private] => 107
+                        )
+
+                )
+
+        )
+
+    [genesisBlock:artbyrab\blockee\Blockee:private] => artbyrab\blockee\GenesisBlock Object
+        (
+            [block:artbyrab\blockee\GenesisBlock:private] => artbyrab\blockee\Block Object
+                (
+                    [previousBlockHash:artbyrab\blockee\Block:private] => 0be057dceb143b8f1a14d76ed6738009
+                    [data:artbyrab\blockee\Block:private] => Array
+                        (
+                            [0] => 0be057dceb143b8f1a14d76ed6738009
+                            [1] => Initial genesis block data
+                        )
+
+                    [isLocked:artbyrab\blockee\Block:private] => 1
+                    [maximumSizeBytes:artbyrab\blockee\Block:private] => 200
+                    [sizeBytes:artbyrab\blockee\Block:private] => 58
+                )
+
+        )
+
+)
+```
+
+## Resources
+
 * [Running Tests](documents/running-tests.md)
 * [Code Checks](documents/code-checks.md)
 * Tutorial on creating a blockchain in Java by IvanOnTech
