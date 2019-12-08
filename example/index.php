@@ -9,12 +9,12 @@ use artbyrab\blockee\Blockee;
 use artbyrab\blockee\Block;
 
 $blockee = new Blockee();
-$blockee->addData("This is some more data added from the index file.");
-$blockee->addData("Yet more data added from the index file.");
-$blockee->addData("Even more data added from the index file.");
-$blockee->addData("And there is more data added from the index file.");
-$blockee->addData("Yet more data added from the index file.");
-
+$blockee->addData("Transfer $10 from wallet a to wallet b");
+$blockee->addData("Transfer $20 from wallet a to wallet b");
+$blockee->addData("Transfer $10 from wallet c to wallet d");
+$blockee->addData("Transfer $5 from wallet a to wallet d");
+$blockee->addData("Transfer $20 from wallet f to wallet a");
+$blockee->addData("Transfer $2 from wallet b to wallet c");
 ?>
 
 <!doctype html>
@@ -47,7 +47,19 @@ $blockee->addData("Yet more data added from the index file.");
                 <img style="margin:10px;" src="../files/graphics/exports/blockee-logo.png">
                 <hr>
                 <h1>Blockee</h1>
-                <p>A PHP based blockchain</p>
+                <p>
+                    Blockee is a experimental blockchain built in PHP. 
+                </p>
+                <p>
+                    Blockee is an experiment to see if i could build some basic 
+                    functionality of a blockchain in PHP in a small time frame. 
+                    I took as little inspiration as possible by trying not to 
+                    look at other people's implementations of a blockchain. 
+                    Therefore, i may have built this in a non traditional way 
+                    or wholly misunderstood basic concepts. The sources i used 
+                    as full or partial inspiration are in the resources section 
+                    of this file.
+                </p>
                 <hr>
                 <ul>
                     <li>Current Blockchain size: <?php echo $blockee->getBlockSize();?> bytes</li>
@@ -58,9 +70,9 @@ $blockee->addData("Yet more data added from the index file.");
                 </p>    
                 
                 <p>
-    <?php echo "<pre>"; ?>
-    <?php print_r($blockee); ?>
-    <?php echo "</pre>"; ?>
+<?php echo "<pre>"; ?>
+<?php print_r($blockee); ?>
+<?php echo "</pre>"; ?>
                 </p>
                 <p>
                 <?php $blockee->getChain()->verifyChain(); ?>
