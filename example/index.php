@@ -44,7 +44,7 @@ $blockee->addData("Transfer $2 from wallet b to wallet c");
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <img style="margin:10px;" src="../files/graphics/exports/blockee-logo.png">
+                <img style="margin:10px;" src="../files/graphics/blockee-logo.png">
                 <hr>
                 <h1>Blockee</h1>
                 <p>
