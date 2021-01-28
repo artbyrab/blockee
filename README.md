@@ -1,6 +1,6 @@
 # Blockee
 
-![Image](files/graphics/exports/blockee-logo.png?raw=true)
+![Image](files/graphics/blockee-logo.png?raw=true)
 
 Blockee is a experimental blockchain built in PHP. 
 
